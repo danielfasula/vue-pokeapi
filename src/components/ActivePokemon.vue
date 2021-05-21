@@ -1,14 +1,27 @@
 <template>
   <div class="col-6 text-center">
     <h2 class="mt-3">Active Pokemon</h2>
-    <div v-if="state.activePokemon.types">
-      <h4 class="text-capitalize">
-        {{ state.activePokemon.name }}
-      </h4>
-      <h5 class="text-capitalize">Type: {{ checkTyping() }}</h5>
-      <div v-if="state.activePokemon.sprites">
-        <img :src="state.activePokemon.sprites.front_default" alt="" />
-        <img :src="state.activePokemon.sprites.front_shiny" alt="" />
+    <div
+      class="row d-flex justify-content-center h-75"
+      v-if="state.activePokemon.types"
+    >
+      <div class="col-12 mt-5">
+        <h4 class="text-capitalize mt-5">
+          {{ state.activePokemon.name }}
+        </h4>
+        <h5 class="text-capitalize mt-4">Type: {{ checkTyping() }}</h5>
+      </div>
+      <div class="col-12" v-if="state.activePokemon.sprites">
+        <!-- <img :src="state.activePokemon.sprites.front_default" alt="" /> -->
+        <img
+          class="sprite"
+          :src="state.activePokemon.sprites.front_shiny"
+          alt=""
+        />
+      </div>
+      <div class="col-12 d-flex justify-content-center">
+        <h5 class="align-self-end mr-2">Catch It!</h5>
+        <img class="" height="35" src="../assets/img/pokeball.png" alt="" />
       </div>
     </div>
   </div>
@@ -38,7 +51,7 @@ export default {
 </script>
 
 <style scoped>
-img {
+.sprite {
   height: 30vh;
 }
 </style>

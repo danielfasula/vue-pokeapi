@@ -6,9 +6,10 @@
         class="text-capitalize mt-1"
         v-for="pokemon in state.pokedex"
         :key="pokemon.name"
-        @click="setActivePokemon(pokemon.url)"
       >
-        {{ pokemon.name }}
+        <h6 @click="setActivePokemon(pokemon.url)">
+          {{ pokemon.name }}
+        </h6>
       </li>
     </ul>
     <div class="row mt-4">
@@ -52,3 +53,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h6:hover {
+  cursor: pointer;
+}
+</style>
